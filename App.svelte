@@ -8,7 +8,7 @@
 					  const text = await res.text();
 
 					  if (res.ok) {
-					    console.log(JSON.parse(text));
+					    // console.log(JSON.parse(text));
 
 					    return JSON.parse(text);
 					  } else {
@@ -34,14 +34,15 @@
 <button on:click={handleClick} class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
   Load Events
 </button>
-	<div class="mdl-grid">
+<span><a href="https://github.com/myebstudios" target="_blank">See more projects on my github.</a></span>
+	<div class="mdl-grid"> 
 
 {#await events}
 	<!-- MDL Spinner Component -->
     <div class="mdl-spinner mdl-js-spinner is-active"></div>
     {:then events}
       {#each events as event}
-		    <Event name={event.type} date={event.created_at}/>
+		    <Event name={event.type} date={event.created_at} url={event.repo.name}/>
 	    {/each}
     {:catch error}
       <p style="color: red">{error.message}</p>

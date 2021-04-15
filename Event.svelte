@@ -1,6 +1,7 @@
 <script>
   export let name = "";
   export let date = "";
+  export let url = "";
 </script>
 
 <!-- Event card -->
@@ -13,11 +14,11 @@
     </h4>
   </div>
   <div class="mdl-card__actions mdl-card--border">
-    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-      Add to Calendar
+    <a href="http://www.github.com/{url}" target="_blank" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      Visit Repo
     </a>
     <div class="mdl-layout-spacer"></div>
-    <i class="material-icons">event</i>
+    <i class="material-icons">link</i>
   </div>
 </div>
 
